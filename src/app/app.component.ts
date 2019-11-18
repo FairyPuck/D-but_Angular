@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Projet1';
+  title = 'Projet n°1';
+  click(){
+    this.title='Arrête de cliquer !';
+  }
 }
