@@ -1,8 +1,12 @@
 <p>login works!</p>
 <mat-form-field>
-    <input MatInput type="text" placeholder="login" [(ngModel)]="login">
+    <input matInput type="text" placeholder="login" [(ngModel)]="login">
 </mat-form-field>
+
 <mat-form-field>
-    <input type="password" placeholder="mdp" [(ngModel)]="mdp">
+    <input matInput type="password" placeholder="mdp" [(ngModel)]="mdp">
 </mat-form-field>
+
 <button type="submit" (click)="connexion()">Connexion</button>
+
+<mat-spinner *ngIf="spin_show" [diameter]="30"></mat-spinner>

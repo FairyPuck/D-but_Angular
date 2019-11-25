@@ -9,6 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import {MatInputModule} from '@angular/material/input';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatProgressSpinnerModule,
     MatInputModule
   ],
   providers: [],
