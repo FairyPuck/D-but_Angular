@@ -10,6 +10,9 @@ import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -25,6 +28,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     FormsModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
+    MatSnackBarModule,
+    MatButtonModule,
+    HttpClientModule,
     MatInputModule
   ],
   providers: [],

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-login',
@@ -11,9 +14,13 @@ export class LoginComponent implements OnInit {
   mdp: string;
   logged = false;
   spin_show = false;
-  constructor() { }
+  constructor(private _snackBar: MatSnackBar, private http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get('https://jsonplaceholder.typicode.com/users')
+    .subscribe(value=>{
+      console.log(value);
+    });
   }
 
   connexion() {
@@ -23,14 +30,19 @@ export class LoginComponent implements OnInit {
     console.log("mdp", this.mdp);
 
     setTimeout(() => {
-      if (this.login == "admin" && this.mdp == "password") {
+      if (this.login == "admin") {
         this.logged = true;
       }
       if (this.logged == true) {
-        console.log("tu es connecté !")
+        this._snackBar.open("tu es connecté !" , null, {
+          duration: 2000,
+        });
         duration : 3000;
       } 
       else{
+        this._snackBar.open("truand !" , null,{
+          duration: 2000,
+        });
          console.log("truand !")
          duration : 3000;
       }

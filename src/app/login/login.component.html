@@ -7,6 +7,6 @@
     <input matInput type="password" placeholder="mdp" [(ngModel)]="mdp">
 </mat-form-field>
 
-<button type="submit" (click)="connexion()">Connexion</button>
+<button mat-raised-button color="accent" type="submit" (click)="connexion()">Connexion</button>
 
 <mat-spinner *ngIf="spin_show" [diameter]="30"></mat-spinner>
