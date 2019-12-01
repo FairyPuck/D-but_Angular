@@ -10,8 +10,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
-  login: string;
-  mdp: string;
+  nom_user: string;
+  mdp_user: string;
+  mdp_user_confirm: string;
   logged = false;
   spin_show = false;
   constructor(private _snackBar: MatSnackBar, private http: HttpClient) { }
@@ -23,31 +24,32 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  connexion() {
+  register() {
     this.spin_show = true;
     console.log("connexion...");
-    console.log("login", this.login);
-    console.log("mdp", this.mdp);
+    console.log("nom_user", this.nom_user);
+    console.log("mdp_user", this.mdp_user);
+    console.log("mdp_user_confirm", this.mdp_user_confirm);
 
-    setTimeout(() => {
-      if (this.login == "admin") {
-        this.logged = true;
-      }
-      if (this.logged == true) {
-        this._snackBar.open("tu es connecté !" , null, {
-          duration: 2000,
-        });
-        duration : 3000;
-      } 
-      else{
-        this._snackBar.open("truand !" , null,{
-          duration: 2000,
-        });
-         console.log("truand !")
-         duration : 3000;
-      }
+    // setTimeout(() => {
+    //   if (this.login == "admin") {
+    //     this.logged = true;
+    //   }
+    //   if (this.logged == true) {
+    //     this._snackBar.open("tu es connecté !" , null, {
+    //       duration: 2000,
+    //     });
+    //     duration : 3000;
+    //   } 
+    //   else{
+    //     this._snackBar.open("truand !" , null,{
+    //       duration: 2000,
+    //     });
+    //      console.log("truand !")
+    //      duration : 3000;
+    //   }
 
-      this.spin_show = false;
-    }, 3000);
+    //   this.spin_show = false;
+    // }, 3000);
   }
 }

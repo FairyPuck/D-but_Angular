@@ -1,11 +1,15 @@
 <mat-form-field>
-    <input matInput type="text" placeholder="login" [(ngModel)]="login">
+    <input matInput type="text" placeholder="Nom D'utilisateur" [(ngModel)]="nom_user">
 </mat-form-field>
 
 <mat-form-field>
-    <input matInput type="password" placeholder="mdp" [(ngModel)]="mdp">
+    <input matInput type="password" placeholder="Mot de Passe" [(ngModel)]="mdp_user">
 </mat-form-field>
 
-<button mat-raised-button color="accent" type="submit" (click)="connexion()">Connexion</button>
+<mat-form-field>
+    <input matInput type="password" placeholder="Confirmer le Mot de Passe" [(ngModel)]="mdp_user_confirm">
+</mat-form-field>
+
+<button mat-raised-button color="accent" type="submit" (click)="register()">S'inscrire</button>
 
 <mat-spinner *ngIf="spin_show" [diameter]="30"></mat-spinner>
