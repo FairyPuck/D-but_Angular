@@ -4,3 +4,22 @@ header{
     width: 100%;
     background-color: rgb(221, 209, 34);
 }
+
+#button_connect {   /* juste selection de button avec un float right */
+    float: right;
+    margin-top: 10px;
+    margin-right: 25px;
+}
+
+#button_register {   /* juste selection de button avec un float right */
+    size: 20pxnpm;
+    float: right;
+    margin-top: 50px;
+    margin-right: -100px;
+}
+
+mat-form-field {   /* juste selection de button avec un float right */
+    float: right;
+    margin-top: 15px;
+    margin-right: 25px;
+}

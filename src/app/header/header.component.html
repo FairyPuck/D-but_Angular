@@ -1,4 +1,10 @@
 <header>
-    <a>Header</a>
-    <a [routerLink]="['/login']">Login</a>
+    <mat-form-field>
+        <input matInput type="text" placeholder="login" [(ngModel)]="login">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="password" placeholder="mdp" [(ngModel)]="mdp">
+    </mat-form-field>
+    <button id="button_connect" mat-raised-button color="accent" type="submit" (click)="connexion()">Se Connecter</button>
+    <button id="button_register" mat-raised-button color="accent" [routerLink]="['/login']">S'inscrire</button>
 </header>
