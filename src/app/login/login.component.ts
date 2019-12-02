@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -18,10 +18,6 @@ export class LoginComponent implements OnInit {
   constructor(private _snackBar: MatSnackBar, private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('https://jsonplaceholder.typicode.com/users')
-    .subscribe(value=>{
-      console.log(value);
-    });
   }
 
   register() {

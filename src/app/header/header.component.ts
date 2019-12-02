@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -17,9 +17,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.http.get('https://jsonplaceholder.typicode.com/users')
-    .subscribe(value=>{
-      console.log(value);
-    });
+      .subscribe(value => {
+        console.log(value);
+      });
   }
 
   connexion() {
@@ -27,27 +27,44 @@ export class HeaderComponent implements OnInit {
     console.log("connexion...");
     console.log("login", this.login);
     console.log("mdp", this.mdp);
-  
-    setTimeout(() => {
-      if (this.login == "admin") {
-        this.logged = true;
-      }
-      if (this.logged == true) {
-        this._snackBar.open("tu es connecté !" , null, {
-          duration: 2000,
-        });
-        duration : 3000;
-      } 
-      else{
-        this._snackBar.open("truand !" , null,{
-          duration: 2000,
-        });
-         console.log("truand !")
-         duration : 3000;
-      }
-  
-      this.spin_show = false;
-    }, 3000);
+
+    // setTimeout(() => {
+    //   if (this.login == "admin") {
+    //     this.logged = true;
+    //   }
+    //   if (this.logged == true) {
+    //     this._snackBar.open("tu es connecté !" , null, {
+    //       duration: 2000,
+    //     });
+    //     duration : 3000;
+    //   } 
+    //   else{
+    //     this._snackBar.open("truand !" , null,{
+    //       duration: 2000,
+    //     });
+    //      console.log("truand !")
+    //      duration : 3000;
+    //   }
+
+    //   this.spin_show = false;
+    // }, 3000);
+
+    this.http.get('https://jsonplaceholder.typicode.com/users?username=' + this.login + ' ')
+      .subscribe((value: any[]) => {
+        if (value.length === 1) {
+          this.logged = true;
+          this._snackBar.open("Tu es connecté !", null, {
+            duration: 2000,
+          });
+        }
+        else {
+          this._snackBar.open("Vas t'inscrire !", null, {
+            duration: 2000,
+          });
+        }
+      }, erreur_get => {
+        console.error("erreur ! ", erreur_get.error);
+      });
   }
 }
 
