@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
     console.log('mdp', this.mdp);
 
     // setTimeout(() => {
-    //   if (this.login == "admin") {
+    //   if (this.login == "admin") {qs
     //     this.logged = true;
     //   }
     //   if (this.logged == true) {
