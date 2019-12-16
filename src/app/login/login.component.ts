@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -10,22 +8,21 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
-  nom_user: string;
-  mdp_user: string;
-  mdp_user_confirm: string;
+  nomUser: string;
+  mdpUser: string;
+  mdpUserConfirm: string;
   logged = false;
-  spin_show = false;
-  constructor(private _snackBar: MatSnackBar) { }
+  spinShow = false;
 
   ngOnInit() {
   }
 
   register() {
-    this.spin_show = true;
-    console.log("connexion...");
-    console.log("nom_user", this.nom_user);
-    console.log("mdp_user", this.mdp_user);
-    console.log("mdp_user_confirm", this.mdp_user_confirm);
+    this.spinShow = true;
+    console.log('connexion...');
+    console.log('nom_user', this.nomUser);
+    console.log('mdp_user', this.mdpUser);
+    console.log('mdp_user_confirm', this.mdpUserConfirm);
 
     // setTimeout(() => {
     //   if (this.login == "admin") {

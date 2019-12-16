@@ -1,8 +1,8 @@
-import {async, ComponentFixture, getTestBed, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
 import {FormsModule} from '@angular/forms';
-import {MatInputModule, MatProgressSpinner, MatProgressSpinnerModule, MatSnackBarModule} from '@angular/material';
+import {MatInputModule, MatProgressSpinnerModule, MatSnackBarModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
 import {BrowserDynamicTestingModule} from '@angular/platform-browser-dynamic/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
@@ -15,7 +15,7 @@ describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
   // tslint:disable-next-line:no-shadowed-variable
-  let httpTestingController : HttpTestingController;
+  let httpTestingController: HttpTestingController;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -23,6 +23,7 @@ describe('HeaderComponent', () => {
         BrowserDynamicTestingModule,
         MatSnackBarModule,
         MatProgressSpinnerModule,
+        HttpClientModule,
         HttpClientTestingModule,
         RouterTestingModule,
         NoopAnimationsModule,

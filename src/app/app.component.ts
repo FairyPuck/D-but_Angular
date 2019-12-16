@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Projet n°1';
-  click(){
-    this.title='Arrête de cliquer !';
+  click() {
+    this.title = 'Arrête de cliquer !';
   }
 }

@@ -3,22 +3,18 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import {MatInputModule, MatProgressSpinnerModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
 import {HeaderComponent} from './header/header.component';
-import {AppRoutingModule} from './app-routing.module';
-import {HomeComponent} from './home/home.component';
-import {LoginComponent} from './login/login.component';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatButtonModule} from '@angular/material/button';
-import {BrowserDynamicTestingModule} from '@angular/platform-browser-dynamic/testing';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         MatInputModule,
-        AppRoutingModule,
+        HttpClientTestingModule,
+        RouterTestingModule,
         MatSnackBarModule,
         MatProgressSpinnerModule,
         MatButtonModule,
@@ -26,9 +22,6 @@ describe('AppComponent', () => {
       ],
       declarations: [
         HeaderComponent,
-        LoginComponent,
-        PageNotFoundComponent,
-        HomeComponent,
         AppComponent
       ],
     }).compileComponents();

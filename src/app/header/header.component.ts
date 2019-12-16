@@ -17,17 +17,13 @@ export class HeaderComponent implements OnInit {
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('https://jsonplaceholder.typicode.com/users')
-      .subscribe(value => {
-        console.log(value);
-      });
   }
 
   connexion() {
     this.spinShow = true;
-    console.log("connexion...");
-    console.log("login", this.login);
-    console.log("mdp", this.mdp);
+    console.log('connexion...');
+    console.log('login', this.login);
+    console.log('mdp', this.mdp);
 
     // setTimeout(() => {
     //   if (this.login == "admin") {
@@ -54,17 +50,16 @@ export class HeaderComponent implements OnInit {
       .subscribe((value: any[]) => {
         if (value.length === 1) {
           this.logged = true;
-          this.snackBar.open("Tu es connecté !", null, {
+          this.snackBar.open('Tu es connecté !', null, {
+            duration: 2000,
+          });
+        } else {
+          this.snackBar.open('Vas t inscrire !', null, {
             duration: 2000,
           });
         }
-        else {
-          this.snackBar.open("Vas t'inscrire !", null, {
-            duration: 2000,
-          });
-        }
-      }, erreur_get => {
-        console.error("erreur ! ", erreur_get.error);
+      }, erreurGet => {
+        console.error('erreur ! ', erreurGet.error);
       });
   }
 }
