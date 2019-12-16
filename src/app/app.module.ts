@@ -14,6 +14,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {BrowserDynamicTestingModule} from '@angular/platform-browser-dynamic/testing';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatSnackBarModule,
     MatButtonModule,
     HttpClientModule,
+    BrowserDynamicTestingModule,
     MatInputModule
   ],
   providers: [],

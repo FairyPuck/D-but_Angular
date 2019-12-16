@@ -4,18 +4,31 @@ import { AppComponent } from './app.component';
 import {MatInputModule, MatProgressSpinnerModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {HeaderComponent} from './header/header.component';
+import {AppRoutingModule} from './app-routing.module';
+import {HomeComponent} from './home/home.component';
+import {LoginComponent} from './login/login.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatButtonModule} from '@angular/material/button';
+import {BrowserDynamicTestingModule} from '@angular/platform-browser-dynamic/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule,
         MatInputModule,
-        FormsModule,
+        AppRoutingModule,
+        MatSnackBarModule,
         MatProgressSpinnerModule,
-        HttpClientModule
+        MatButtonModule,
+        FormsModule
       ],
       declarations: [
+        HeaderComponent,
+        LoginComponent,
+        PageNotFoundComponent,
+        HomeComponent,
         AppComponent
       ],
     }).compileComponents();
@@ -25,18 +38,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'Projet1'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Projet1');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Projet1 app is running!');
   });
 });

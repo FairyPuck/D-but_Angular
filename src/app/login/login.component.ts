@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   mdp_user_confirm: string;
   logged = false;
   spin_show = false;
-  constructor(private _snackBar: MatSnackBar, private http: HttpClient) { }
+  constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     //       duration: 2000,
     //     });
     //     duration : 3000;
-    //   } 
+    //   }
     //   else{
     //     this._snackBar.open("truand !" , null,{
     //       duration: 2000,

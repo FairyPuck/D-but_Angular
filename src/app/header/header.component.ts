@@ -12,8 +12,9 @@ export class HeaderComponent implements OnInit {
   login: string;
   mdp: string;
   logged = false;
-  spin_show = false;
-  constructor(private _snackBar: MatSnackBar, private http: HttpClient) { }
+  spinShow = false;
+
+  constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
   ngOnInit() {
     this.http.get('https://jsonplaceholder.typicode.com/users')
@@ -23,7 +24,7 @@ export class HeaderComponent implements OnInit {
   }
 
   connexion() {
-    this.spin_show = true;
+    this.spinShow = true;
     console.log("connexion...");
     console.log("login", this.login);
     console.log("mdp", this.mdp);
@@ -37,7 +38,7 @@ export class HeaderComponent implements OnInit {
     //       duration: 2000,
     //     });
     //     duration : 3000;
-    //   } 
+    //   }
     //   else{
     //     this._snackBar.open("truand !" , null,{
     //       duration: 2000,
@@ -49,16 +50,16 @@ export class HeaderComponent implements OnInit {
     //   this.spin_show = false;
     // }, 3000);
 
-    this.http.get('https://jsonplaceholder.typicode.com/users?username=' + this.login + ' ')
+    this.http.get('https://jsonplaceholder.typicode.com/users?username=' + this.login)
       .subscribe((value: any[]) => {
         if (value.length === 1) {
           this.logged = true;
-          this._snackBar.open("Tu es connecté !", null, {
+          this.snackBar.open("Tu es connecté !", null, {
             duration: 2000,
           });
         }
         else {
-          this._snackBar.open("Vas t'inscrire !", null, {
+          this.snackBar.open("Vas t'inscrire !", null, {
             duration: 2000,
           });
         }
